@@ -45,10 +45,6 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: [true, 'How much is the insurrnce fee']
     },
-    image: {
-        type: String,
-        default: "default.jpg"
-    },
     readtime: {
         type: Number,
         default: 3
