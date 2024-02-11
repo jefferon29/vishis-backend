@@ -5,7 +5,7 @@ const {searchHelper, paginateHelper} =require("../Helpers/query/queryHelpers");
 
 const addStory = asyncErrorWrapper(async  (req,res,next)=> {
 
-    const {title,content, depart, slide, weight, insurrance, receiver, expect }= req.body 
+    const {title,content, depart, weight, insurrance, receiver, expect }= req.body 
 
     var wordCount = content.trim().split(/\s+/).length ; 
    
@@ -17,7 +17,6 @@ const addStory = asyncErrorWrapper(async  (req,res,next)=> {
             title,
             content,
             depart,
-            slide,
             weight,
             insurrance,
             receiver,
@@ -142,14 +141,13 @@ const editStoryPage  =asyncErrorWrapper(async(req,res,next)=>{
 
 const editStory  =asyncErrorWrapper(async(req,res,next)=>{
     const {slug } = req.params ; 
-    const {title ,content, depart, slide, weight, insurrance, receiver, expect} = req.body;
+    const {title ,content, depart, weight, insurrance, receiver, expect} = req.body;
 
     const story = await Story.findOne({slug : slug })
 
     story.title = title ;
     story.content = content ;
     story.depart = depart;
-    story.slide = slide;
     story.insurrance = insurrance;
     story.weight = weight;
     story.receiver = receiver;
