@@ -33,10 +33,6 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: [true, "Input when the package was shipped"],
     },
-    slide: {
-        type: String,
-        required: [true, "Move the green circle on the slider"]
-    },
     weight: {
         type: String,
         required: [false, "Please input the package weight"]
