@@ -15,7 +15,8 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: [true, "Input a tracking ID"],
         unique: [true, "That tracking number alredy exists, try another,"],
-        minlength: [10, "Please provide a title least 10 characters "],
+        minlength: [10, "Tracking number must be 10 characters "],
+        maxlength: [10, "Tracking number must be 10 characters"],
     },
     content: {
         type: String,
